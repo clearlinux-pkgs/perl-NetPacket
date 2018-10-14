@@ -4,21 +4,30 @@
 #
 Name     : perl-NetPacket
 Version  : 1.6.0
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/Y/YA/YANICK/NetPacket-1.6.0.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/Y/YA/YANICK/NetPacket-1.6.0.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libn/libnetpacket-perl/libnetpacket-perl_1.6.0-1.debian.tar.xz
 Summary  : 'assemble/disassemble network packets at the protocol level'
 Group    : Development/Tools
 License  : Artistic-2.0
-Requires: perl-NetPacket-license
-Requires: perl-NetPacket-man
+Requires: perl-NetPacket-license = %{version}-%{release}
+BuildRequires : buildreq-cpan
 
 %description
 NAME
 NetPacket - assemble/disassemble network packets at the protocol level
 VERSION
 version 1.6.0
+
+%package dev
+Summary: dev components for the perl-NetPacket package.
+Group: Development
+Provides: perl-NetPacket-devel = %{version}-%{release}
+
+%description dev
+dev components for the perl-NetPacket package.
+
 
 %package license
 Summary: license components for the perl-NetPacket package.
@@ -28,19 +37,11 @@ Group: Default
 license components for the perl-NetPacket package.
 
 
-%package man
-Summary: man components for the perl-NetPacket package.
-Group: Default
-
-%description man
-man components for the perl-NetPacket package.
-
-
 %prep
-tar -xf %{SOURCE1}
-cd ..
 %setup -q -n NetPacket-1.6.0
-mkdir -p %{_topdir}/BUILD/NetPacket-1.6.0/deblicense/
+cd ..
+%setup -q -T -D -n NetPacket-1.6.0 -b 1
+mkdir -p deblicense/
 mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/NetPacket-1.6.0/deblicense/
 
 %build
@@ -65,13 +66,13 @@ make TEST_VERBOSE=1 test
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/perl-NetPacket
-cp LICENSE %{buildroot}/usr/share/doc/perl-NetPacket/LICENSE
-cp deblicense/copyright %{buildroot}/usr/share/doc/perl-NetPacket/deblicense_copyright
+mkdir -p %{buildroot}/usr/share/package-licenses/perl-NetPacket
+cp LICENSE %{buildroot}/usr/share/package-licenses/perl-NetPacket/LICENSE
+cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-NetPacket/deblicense_copyright
 if test -f Makefile.PL; then
-make pure_install PERL_INSTALL_ROOT=%{buildroot}
+make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
-./Build install --installdirs=site --destdir=%{buildroot}
+./Build install --installdirs=vendor --destdir=%{buildroot}
 fi
 find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
@@ -80,23 +81,18 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/site_perl/5.26.1/NetPacket.pm
-/usr/lib/perl5/site_perl/5.26.1/NetPacket/ARP.pm
-/usr/lib/perl5/site_perl/5.26.1/NetPacket/Ethernet.pm
-/usr/lib/perl5/site_perl/5.26.1/NetPacket/ICMP.pm
-/usr/lib/perl5/site_perl/5.26.1/NetPacket/IGMP.pm
-/usr/lib/perl5/site_perl/5.26.1/NetPacket/IP.pm
-/usr/lib/perl5/site_perl/5.26.1/NetPacket/IPX.pm
-/usr/lib/perl5/site_perl/5.26.1/NetPacket/TCP.pm
-/usr/lib/perl5/site_perl/5.26.1/NetPacket/UDP.pm
-/usr/lib/perl5/site_perl/5.26.1/NetPacket/USBMon.pm
+/usr/lib/perl5/vendor_perl/5.26.1/NetPacket.pm
+/usr/lib/perl5/vendor_perl/5.26.1/NetPacket/ARP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/NetPacket/Ethernet.pm
+/usr/lib/perl5/vendor_perl/5.26.1/NetPacket/ICMP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/NetPacket/IGMP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/NetPacket/IP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/NetPacket/IPX.pm
+/usr/lib/perl5/vendor_perl/5.26.1/NetPacket/TCP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/NetPacket/UDP.pm
+/usr/lib/perl5/vendor_perl/5.26.1/NetPacket/USBMon.pm
 
-%files license
-%defattr(-,root,root,-)
-/usr/share/doc/perl-NetPacket/LICENSE
-/usr/share/doc/perl-NetPacket/deblicense_copyright
-
-%files man
+%files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/NetPacket.3
 /usr/share/man/man3/NetPacket::ARP.3
@@ -108,3 +104,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/NetPacket::TCP.3
 /usr/share/man/man3/NetPacket::UDP.3
 /usr/share/man/man3/NetPacket::USBMon.3
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/perl-NetPacket/LICENSE
+/usr/share/package-licenses/perl-NetPacket/deblicense_copyright
