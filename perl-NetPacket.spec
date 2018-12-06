@@ -4,7 +4,7 @@
 #
 Name     : perl-NetPacket
 Version  : 1.6.0
-Release  : 4
+Release  : 5
 URL      : https://cpan.metacpan.org/authors/id/Y/YA/YANICK/NetPacket-1.6.0.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/Y/YA/YANICK/NetPacket-1.6.0.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libn/libnetpacket-perl/libnetpacket-perl_1.6.0-1.debian.tar.xz
