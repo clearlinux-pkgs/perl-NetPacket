@@ -81,16 +81,16 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.0/NetPacket.pm
-/usr/lib/perl5/vendor_perl/5.28.0/NetPacket/ARP.pm
-/usr/lib/perl5/vendor_perl/5.28.0/NetPacket/Ethernet.pm
-/usr/lib/perl5/vendor_perl/5.28.0/NetPacket/ICMP.pm
-/usr/lib/perl5/vendor_perl/5.28.0/NetPacket/IGMP.pm
-/usr/lib/perl5/vendor_perl/5.28.0/NetPacket/IP.pm
-/usr/lib/perl5/vendor_perl/5.28.0/NetPacket/IPX.pm
-/usr/lib/perl5/vendor_perl/5.28.0/NetPacket/TCP.pm
-/usr/lib/perl5/vendor_perl/5.28.0/NetPacket/UDP.pm
-/usr/lib/perl5/vendor_perl/5.28.0/NetPacket/USBMon.pm
+/usr/lib/perl5/vendor_perl/5.28.1NetPacket.pm
+/usr/lib/perl5/vendor_perl/5.28.1NetPacket/ARP.pm
+/usr/lib/perl5/vendor_perl/5.28.1NetPacket/Ethernet.pm
+/usr/lib/perl5/vendor_perl/5.28.1NetPacket/ICMP.pm
+/usr/lib/perl5/vendor_perl/5.28.1NetPacket/IGMP.pm
+/usr/lib/perl5/vendor_perl/5.28.1NetPacket/IP.pm
+/usr/lib/perl5/vendor_perl/5.28.1NetPacket/IPX.pm
+/usr/lib/perl5/vendor_perl/5.28.1NetPacket/TCP.pm
+/usr/lib/perl5/vendor_perl/5.28.1NetPacket/UDP.pm
+/usr/lib/perl5/vendor_perl/5.28.1NetPacket/USBMon.pm
 
 %files dev
 %defattr(-,root,root,-)
