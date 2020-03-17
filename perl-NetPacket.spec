@@ -4,7 +4,7 @@
 #
 Name     : perl-NetPacket
 Version  : 1.7.2
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/Y/YA/YANICK/NetPacket-1.7.2.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/Y/YA/YANICK/NetPacket-1.7.2.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libn/libnetpacket-perl/libnetpacket-perl_1.6.0-1.debian.tar.xz
@@ -82,7 +82,7 @@ make TEST_VERBOSE=1 test
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-NetPacket
 cp %{_builddir}/NetPacket-1.7.2/LICENSE %{buildroot}/usr/share/package-licenses/perl-NetPacket/72832ad015dadb7d5df745c4b2b3638a06970d9f
-cp %{_builddir}/NetPacket-1.7.2/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-NetPacket/738acd3bc6126f688fa1101e42d824b6dc2d7aa5
+cp %{_builddir}/debian/copyright %{buildroot}/usr/share/package-licenses/perl-NetPacket/738acd3bc6126f688fa1101e42d824b6dc2d7aa5
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -118,15 +118,15 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket.pm
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket/ARP.pm
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket/Ethernet.pm
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket/ICMP.pm
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket/ICMPv6.pm
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket/IGMP.pm
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket/IP.pm
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket/IPX.pm
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket/IPv6.pm
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket/TCP.pm
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket/UDP.pm
-/usr/lib/perl5/vendor_perl/5.30.1/NetPacket/USBMon.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket/ARP.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket/Ethernet.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket/ICMP.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket/ICMPv6.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket/IGMP.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket/IP.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket/IPX.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket/IPv6.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket/TCP.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket/UDP.pm
+/usr/lib/perl5/vendor_perl/5.30.2/NetPacket/USBMon.pm
