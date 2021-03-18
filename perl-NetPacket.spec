@@ -4,7 +4,7 @@
 #
 Name     : perl-NetPacket
 Version  : 1.7.2
-Release  : 16
+Release  : 17
 URL      : https://cpan.metacpan.org/authors/id/Y/YA/YANICK/NetPacket-1.7.2.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/Y/YA/YANICK/NetPacket-1.7.2.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libn/libnetpacket-perl/libnetpacket-perl_1.6.0-1.debian.tar.xz
@@ -118,15 +118,15 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket.pm
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket/ARP.pm
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket/Ethernet.pm
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket/ICMP.pm
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket/ICMPv6.pm
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket/IGMP.pm
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket/IP.pm
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket/IPX.pm
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket/IPv6.pm
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket/TCP.pm
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket/UDP.pm
-/usr/lib/perl5/vendor_perl/5.30.3/NetPacket/USBMon.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket/ARP.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket/Ethernet.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket/ICMP.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket/ICMPv6.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket/IGMP.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket/IP.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket/IPX.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket/IPv6.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket/TCP.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket/UDP.pm
+/usr/lib/perl5/vendor_perl/5.32.1/NetPacket/USBMon.pm
